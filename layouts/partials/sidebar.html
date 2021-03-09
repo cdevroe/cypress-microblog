@@ -1,0 +1,60 @@
+<aside class="clear">
+    <header>
+        <h1 class="logo">
+            <a href="/">
+                <div><img src="{{ .Site.Author.avatar }}" /></div>
+            </a>
+            <div class="text">{{ .Site.Title }}</div>
+        </h1>
+        <div class="info collapse" id="info">
+            <div class="subtitle">
+                <p>{{ .Site.Params.description | safeHTML }}</p>
+            </div>
+            
+            <nav class="main-nav">
+                {{ range .Site.Menus.main }}
+                    {{ if .Page.Params.redirect_url }}
+                        <a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
+                    {{ else }}
+                        <a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+                    {{ end }}
+                {{ end }}
+            </nav>
+            <div class="social">
+                <p>
+                    {{ with .Site.Params.twitter_username }}
+                        <a href="https://twitter.com/{{ . }}"><i class="fab fa-twitter"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.linkedin_username }}
+                        <a href="https://linkedin.com/{{ . }}"><i class="fab fa-linkedin"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.instagram_username }}
+                        <a href="https://instagram.com/{{ . }}"><i class="fab fa-instagram"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.github_username }}
+                        <a href="https://github.com/{{ . }}"><i class="fab fa-github"></i></a>
+                    {{ end }}
+                    {{ with .Site.Author.username }}
+                        <a href="https://micro.blog/{{ . }}"><i class="fab fa-microblog"></i></a>
+                    {{ end }}
+                </p>
+            </div>
+        </div>
+        <!-- Mobile Menu is "cloned" from main menu -->
+        <div class="mobile-menu">
+            <span class="mobile-logo">
+
+            </span>
+        </div>
+        <!-- Hamburger -->
+        <a href="#" class="nav-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#info">
+            <i class="material-icons">info_outline</i>
+        </button>
+    </header>
+</aside>

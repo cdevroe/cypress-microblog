@@ -1,0 +1,11 @@
+<footer>
+    <div>
+        <p>{{ .Site.Params.description | safeHTML }}</p>
+    </div>
+    {{ partial "custom_footer.html" . }}
+</footer>
+
+</div> <!-- closes site-wrapper -->
+</script src="{{ "assets/js/js.js" | relURL }}?{{ .Site.Params.theme_seconds }}"></script>
+</body>
+</html>
