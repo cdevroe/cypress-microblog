@@ -33,7 +33,7 @@
 		</div>
 	</section>
 	<section>
-		{{ $pag := $.Paginator }}
+		
         {{ if or .IsHome .Site.Params.paginate_categories }}
             {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
             {{ $list := $paginator.Pages }}
@@ -48,6 +48,7 @@
         {{ end }}
 
 		<div class="pagination">
+			{{ $pag := $.Paginator }}
 			{{ if or $pag.HasPrev $pag.HasNext }}
                 {{ if $pag.HasPrev }}
                     <a href="{{ $pag.Prev.URL }}">&larr; Newer Posts</a>
