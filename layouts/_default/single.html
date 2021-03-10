@@ -11,3 +11,18 @@
 
 </div>
 {{ end }}
+
+
+<main class="page-layout">
+	<section>
+		<article>
+			<div class="content">
+				<h2>{{ .Title }}</h2>
+				<div>
+					{{ .Content }}
+				</div>
+			</div>
+		</article>
+	</section>
+	{{ partial "footer.html" . }}
+</main>
