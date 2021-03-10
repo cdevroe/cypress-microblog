@@ -52,10 +52,10 @@
 				-->
 			</div>
 			<div class="content">
-        {{ if .Title }}
-	  	    <h2 class="p-name">{{ .Title }}</h2>
-  	    {{ end }}
-				<?php the_title('<h2>','</h2>'); ?>
+				{{ if .Title }}
+					<h2 class="p-name">{{ .Title }}</h2>
+				{{ end }}
+				
 				<div class="e-content">
 					{{ .Content }}
 				</div>
@@ -63,8 +63,8 @@
 				
 			</div>
 			{{ if .Site.Params.include_conversation }}
-        <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
-      {{ end }}
+        		<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+      		{{ end }}
 		</article>
 	</section>
 

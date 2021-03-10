@@ -1,36 +1,65 @@
 {{ define "main" }}
-
 <main>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="grid thumbnails" data-toggle="lightbox">
-                    <div class="grid-sizer"></div>
+	<section class="blog-header">
+		<header>
+			<h2><a href="/blog">Blog</a></h2>
+			<nav>
+				<ul>
+					<li><a href="/blog">Recent</a></li>
+					<!-- <li><a href="#" class="drop-link" data-nav="categories">Categories</a></li>
+					<li><a href="#" class="drop-link" data-nav="search"><i class="material-icons">search</i></a></a></li>-->
+					<li><a href="{{ .RSSLink }}"><i class="material-icons">rss_feed</i></a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="blog-controls">
+			<!-- <section data-nav-content="categories">
+				
+					<ul>
+						List categories here
+					</ul>
+          
+				<a href="#" class="close-link material-icons">close</a>
+			</section> -->
+			<!-- <section data-nav-content="search" class="blog-search">
+				<form id="barley-search" method="get" role="search" action="">
+					<input class="form-control" type="search" id="searchtext" placeholder="Search..." value="" name="s">
+					<button class="button" type="submit">
+						<i class="material-icons">arrow_forward</i>
+					</button>
+				</form>
+				<a href="#" class="close-link material-icons">close</a>
+			</section> -->
+		</div>
+	</section>
+	<section>
 
-                    {{- $list := where .Pages ".Params.photos" "!=" nil -}}
-                    {{- $len := (len $list) -}}
-                    {{ range $index, $value := $list }}
+        {{ if or .IsHome .Site.Params.paginate_categories }}
+            {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+            {{ $list := $paginator.Pages }}
+            {{ range $list  }}
+                {{ partial "post-item.html" . }}
+            {{ end }}
+        {{ else }}
+            {{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+            {{ range $list  }}
+                {{ partial "post-item.html" . }}
+            {{ end }}
+        {{ end }}
 
-                        <div class="item">
-                            <figure>
-                                {{ range first 1 .Params.photos }}
-                                    <img src="{{ . }}">
-                                {{ end }}
-                                <div class="overlay">
-                                    <a href="{{ .Permalink }}" class="more-link">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                            </figure>
-                        </div>
-
-                    {{ end }}
-
-                </div>
-            </div>
-        </div>
-    </section>
-    {{ partial "footer.html" . }}
+		<div class="pagination">
+			{{ if or $pag.HasPrev $pag.HasNext }}
+                {{ if $pag.HasPrev }}
+                    <a href="{{ $pag.Prev.URL }}">&larr; Newer Posts</a>
+                {{ end }}
+                <span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+                {{ if $pag.HasNext }}
+                    <a href="{{ $pag.Next.URL }}">Older Posts &rarr;</a>
+                {{ end }}
+            {{ end }}
+		</div>
+	</section>
+	{{ partial "footer.html" . }}
 </main>
 
 {{ end }}
