@@ -33,7 +33,7 @@
 		</div>
 	</section>
 	<section>
-
+		{{ $pag := $.Paginator }}
         {{ if or .IsHome .Site.Params.paginate_categories }}
             {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
             {{ $list := $paginator.Pages }}
