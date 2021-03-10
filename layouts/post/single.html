@@ -1,21 +1,74 @@
 {{ define "main" }}
-<div class="post h-entry">
 
-  <header class="post-header">
-	{{ if .Title }}
-	  	<h1 class="p-name">{{ .Title }}</h1>
-  	{{ end }}
-    <p class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
-  </header>
+<main <?php post_class( 'post'); ?>>
+	<section class="blog-header">
+		<header>
+			<h2><a href="/blog">Blog</a></h2>
+			<nav>
+				<ul>
+					<li><a href="/blog">Recent</a></li>
+					<!-- <li><a href="#" class="drop-link" data-nav="categories">Categories</a></li>
+					<li><a href="#" class="drop-link" data-nav="search"><i class="material-icons">search</i></a></li> -->
+					<li><a href="{{ .RSSLink }}"><i class="material-icons">rss_feed</i></a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="blog-controls">
+			<!-- <section data-nav-content="categories">
+				
+					<ul>
+						List categories here
+					</ul>
+          
+				<a href="#" class="close-link material-icons">close</a>
+			</section> -->
+			<!-- <section data-nav-content="search" class="blog-search">
+				<form id="barley-search" method="get" role="search" action="">
+					<input class="form-control" type="search" id="searchtext" placeholder="Search..." value="" name="s">
+					<button class="button" type="submit">
+						<i class="material-icons">arrow_forward</i>
+					</button>
+				</form>
+				<a href="#" class="close-link material-icons">close</a>
+			</section> -->
+		</div>
+	</section>
+	<section>
+		<article class="h-entry">
+			<div class="meta">
+				<h5 class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</h5>
+        	<!-- Categories 
+					<h6>Categories:</h6>
+					<div class="categories">
+						List of categories here
+					</div>
+				-->
 
-  <article class="post-content e-content">
-	{{ .Content }}
-  </article>
+				<!-- In case Micro.blog supports tags 
+					<h6>Tagged:</h6>
+					<div class="tags">
+						<p>List of tags here</p>
+					</div>
+				-->
+			</div>
+			<div class="content">
+        {{ if .Title }}
+	  	    <h2 class="p-name">{{ .Title }}</h2>
+  	    {{ end }}
+				<?php the_title('<h2>','</h2>'); ?>
+				<div class="e-content">
+					{{ .Content }}
+				</div>
+				
+				
+			</div>
+			{{ if .Site.Params.include_conversation }}
+        <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+      {{ end }}
+		</article>
+	</section>
 
-</div>
-
-{{ if .Site.Params.include_conversation }}
-<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
-{{ end }}
+	{{ partial "footer.html" . }}
+</main>
 
 {{ end }}
