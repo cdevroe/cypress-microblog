@@ -1,43 +1,12 @@
 {{ define "main" }}
 
 <main>
-	<section class="blog-header">
-		<header>
-			<h2><a href="/">Blog</a></h2>
-			<nav>
-				<ul>
-					<li><a href="/">Recent</a></li>
-					<!-- <li><a href="#" class="drop-link" data-nav="categories">Categories</a></li>
-					<li><a href="#" class="drop-link" data-nav="search"><i class="material-icons">search</i></a></li> -->
-					<li><a href="{{ .RSSLink }}"><i class="material-icons">rss_feed</i></a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="blog-controls">
-			<!-- <section data-nav-content="categories">
-				
-					<ul>
-						List categories here
-					</ul>
-          
-				<a href="#" class="close-link material-icons">close</a>
-			</section> -->
-			<!-- <section data-nav-content="search" class="blog-search">
-				<form id="barley-search" method="get" role="search" action="">
-					<input class="form-control" type="search" id="searchtext" placeholder="Search..." value="" name="s">
-					<button class="button" type="submit">
-						<i class="material-icons">arrow_forward</i>
-					</button>
-				</form>
-				<a href="#" class="close-link material-icons">close</a>
-			</section> -->
-		</div>
-	</section>
+	{{ partial "blog-header.html" . }}
 	<section>
 		<article class="h-entry">
 			<div class="meta">
 				<h5 class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "January 2, 2006" }}</h5>
-        	<!-- Categories 
+        		<!-- Categories 
 					<h6>Categories:</h6>
 					<div class="categories">
 						List of categories here
