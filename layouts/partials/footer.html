@@ -8,7 +8,7 @@
 </div> <!-- closes site-wrapper -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-</script src="{{ "assets/js/js.js" | relURL }}?{{ .Site.Params.theme_seconds }}"></script>
+<script src="{{ "assets/js/js.js" | relURL }}?{{ .Site.Params.theme_seconds }}"></script>
 
 {{ range .Site.Params.plugins_js }}
     <script src="{{ . }}"></script>
