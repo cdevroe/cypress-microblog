@@ -1,6 +1,6 @@
 <main>
 	{{ partial "blog-header.html" . }}
-	<section>
+	<section class="h-feed">
 		
         {{ if .Site.Params.paginate_home }}
 			{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}

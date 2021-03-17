@@ -10,6 +10,10 @@
 
 </script src="{{ "assets/js/js.js" | relURL }}?{{ .Site.Params.theme_seconds }}"></script>
 
+{{ range .Site.Params.plugins_js }}
+    <script src="{{ . }}"></script>
+{{ end }}
+
 <!-- Cypress for Micro.blog version 2021.0.1 -->
 </body>
 </html>
