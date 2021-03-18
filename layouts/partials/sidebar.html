@@ -13,9 +13,9 @@
             
             <nav class="main-nav">
                 <ul id="main-navigation">
-                {{ range .Site.Menus.main }}
                     <li class="menu-item"><a href="/">Home</a></li>
                     <li class="menu-item"><a href="/blog">Blog</a></li>
+                {{ range .Site.Menus.main }}
                     {{ if .Page.Params.redirect_url }}
                         <li class="menu-item"><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
                     {{ else }}
