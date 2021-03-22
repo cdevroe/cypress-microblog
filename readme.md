@@ -10,6 +10,10 @@ Cypress for Micro.blog is freely available to members of Micro.blog. If you use 
 
 ## Version History
 
+2021.1.0 - March 22, 2021
+
+- First public release
+
 2021.0.8b - March 17, 2021
 
 - First beta release
