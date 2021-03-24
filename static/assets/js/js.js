@@ -9534,9 +9534,9 @@ $(document).ready(function(){
     }
 
     // Lightbox source
-    $('.grid.thumbnails figure').each(function(){
-        $(this).find('a.thumbnail').attr('href', $(this).find('img').attr('src'));
-    });
+    // $('.grid.thumbnails figure').each(function(){
+    //     $(this).find('a.thumbnail').attr('href', $(this).find('img').attr('src'));
+    // });
 
     // Search show/hide functionality
     $('.search-reveal').click(function(e) {
