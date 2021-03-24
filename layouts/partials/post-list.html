@@ -1,33 +1,36 @@
-<main>
+<div class="site-wrapper">
+	{{ partial "sidebar.html" . }}
 	{{ partial "blog-header.html" . }}
-	<section class="h-feed">
-		
-        {{ if .Site.Params.paginate_home }}
-			{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
-			{{ range $paginator.Pages }}
-				{{ partial "post-item.html" . }}
-			{{ end }}
-
-			<div class="pagination">
-				{{ $pag := $.Paginator }}
-				{{ if or $pag.HasPrev $pag.HasNext }}
-					{{ if $pag.HasPrev }}
-						<a href="{{ $pag.Prev.URL }}">&larr; Newer Posts</a>
-					{{ end }}
-					<span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
-					{{ if $pag.HasNext }}
-						<a href="{{ $pag.Next.URL }}">Older Posts &rarr;</a>
-					{{ end }}
+	<main>
+		<section class="h-feed">
+			
+			{{ if .Site.Params.paginate_home }}
+				{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+				{{ range $paginator.Pages }}
+					{{ partial "post-item.html" . }}
 				{{ end }}
-			</div>
-		{{ else }}
-			{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
-			{{ range $list  }}
-				{{ partial "post-item.html" . }}
-			{{ end }}
-		{{ end }}
 
-		
-	</section>
-	{{ partial "footer.html" . }}
-</main>
+				<div class="pagination">
+					{{ $pag := $.Paginator }}
+					{{ if or $pag.HasPrev $pag.HasNext }}
+						{{ if $pag.HasPrev }}
+							<a href="{{ $pag.Prev.URL }}">&larr; Newer Posts</a>
+						{{ end }}
+						<span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+						{{ if $pag.HasNext }}
+							<a href="{{ $pag.Next.URL }}">Older Posts &rarr;</a>
+						{{ end }}
+					{{ end }}
+				</div>
+			{{ else }}
+				{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+				{{ range $list  }}
+					{{ partial "post-item.html" . }}
+				{{ end }}
+			{{ end }}
+
+			
+		</section>
+		{{ partial "footer.html" . }}
+	</main>
+</div>

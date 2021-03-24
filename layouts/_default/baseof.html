@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-    <body>
-        {{ partial "sidebar.html" . }}
-        {{ partial "header.html" . }}
+    <body> <!-- class="dark" for black bg -->
         {{ block "main" . }}{{ end }}
     </body>
 </html>
