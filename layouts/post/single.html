@@ -1,46 +1,48 @@
 {{ define "main" }}
 
-<main>
-	{{ partial "blog-header.html" . }}
-	<section>
-		<article class="h-entry">
-			<div class="meta">
-				<h5 class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "January 2, 2006" }}</h5>
+<div class="site-wrapper">
+	{{ partial "sidebar.html" . }}
+	<main>
+		{{ partial "blog-header.html" . }}
+		<section>
+			<article class="h-entry">
+				<div class="meta">
+					<h5 class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "January 2, 2006" }}</h5>
 
-				{{- with .Params.categories -}}
-					<h6>Categories:</h6>
-					<div class="categories">
-						{{- range . }}
-						<a class="article-category-link" href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a>  
-						{{- end }}
-					</div>
-				{{- end }}
+					{{- with .Params.categories -}}
+						<h6>Categories:</h6>
+						<div class="categories">
+							{{- range . }}
+							<a class="article-category-link" href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a>  
+							{{- end }}
+						</div>
+					{{- end }}
 
-				<!-- In case Micro.blog supports tags 
-					<h6>Tagged:</h6>
-					<div class="tags">
-						<p>List of tags here</p>
+					<!-- In case Micro.blog supports tags 
+						<h6>Tagged:</h6>
+						<div class="tags">
+							<p>List of tags here</p>
+						</div>
+					-->
+				</div>
+				<div class="content">
+					{{ if .Title }}
+						<h2 class="p-name">{{ .Title }}</h2>
+					{{ end }}
+					
+					<div class="e-content">
+						{{ .Content }}
 					</div>
-				-->
-			</div>
-			<div class="content">
-				{{ if .Title }}
-					<h2 class="p-name">{{ .Title }}</h2>
-				{{ end }}
-				
-				<div class="e-content">
-					{{ .Content }}
+					
 				</div>
 				
-			</div>
-			
-			{{ if .Site.Params.include_conversation }}
-        		<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
-      		{{ end }}
-		</article>
-	</section>
+				{{ if .Site.Params.include_conversation }}
+					<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+				{{ end }}
+			</article>
+		</section>
 
-	{{ partial "footer.html" . }}
-</main>
-
+		{{ partial "footer.html" . }}
+	</main>
+</div>
 {{ end }}

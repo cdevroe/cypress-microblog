@@ -1,7 +1,8 @@
 <div class="site-wrapper">
 	{{ partial "sidebar.html" . }}
-	{{ partial "blog-header.html" . }}
+	
 	<main>
+		{{ partial "blog-header.html" . }}
 		<section class="h-feed">
 			
 			{{ if .Site.Params.paginate_home }}
