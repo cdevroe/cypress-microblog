@@ -9556,7 +9556,7 @@ $(document).ready(function(){
     $('.nav-toggle').click(function(e){
         e.preventDefault();
         // Duplicate navigation in mobile menu?
-		if ( $("#main-navigation").length ) { // No
+		if ( $(".mobile-menu ul").length ) { // No
 			$('.mobile-menu').fadeToggle();
 			$(this).toggleClass('active');
 			$('body').toggleClass('freeze');
