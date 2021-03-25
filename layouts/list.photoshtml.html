@@ -16,7 +16,7 @@
                             <div class="item">
                                 <figure>
                                     {{ range first 1 .Params.photos }}
-                                        <img src="{{ . }}">
+                                        <img src="https://micro.blog/photos/480x/{{ . }}">
                                     {{ end }}
                                     <div class="overlay">
                                         <a href="{{ .Permalink }}" class="more-link">
