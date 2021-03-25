@@ -10,6 +10,10 @@ Cypress for Micro.blog is freely available to members of Micro.blog. If you use 
 
 ## Version History
 
+2021.1.4 - March 25, 2021
+
+- Fix for mobile navigation duplication issue
+
 2021.1.3 - March 25, 2021
 
 - Fix for responsive layout issue
