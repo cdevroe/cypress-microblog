@@ -9555,12 +9555,21 @@ $(document).ready(function(){
     // Toggle for mobile nav & button
     $('.nav-toggle').click(function(e){
         e.preventDefault();
-        // Duplicate navigation in mobile menu
-        var $clonenav = $('aside header nav ul').clone();
-        $(".mobile-menu").append($clonenav);
-        $('.mobile-menu').fadeToggle();
-        $(this).toggleClass('active');
-        $('body').toggleClass('freeze');
+        // Duplicate navigation in mobile menu?
+		if ( $("#main-navigation").length ) { // No
+			$('.mobile-menu').fadeToggle();
+			$(this).toggleClass('active');
+			$('body').toggleClass('freeze');
+			return;
+		} else { // Yes
+			var $clonenav = $('aside header nav ul').clone();
+			$(".mobile-menu").append($clonenav);
+			$('.mobile-menu').fadeToggle();
+			$(this).toggleClass('active');
+			$('body').toggleClass('freeze');
+		}
+		
+
     });
 
     $('button[type="search"]').on('click',function(e){
