@@ -10,6 +10,19 @@ Cypress for Micro.blog is freely available to members of Micro.blog. If you use 
 
 ## Version History
 
+2021.1.3 - March 25, 2021
+
+- Fix for responsive layout issue
+
+2021.1.2 - March 24, 2021
+
+- Fixes for layout issues
+
+2021.1.1 - March 24, 2021
+
+- Bug fixes for emoji and apostrophes
+- Small speed update for photos grid (would like to do more)
+
 2021.1.0 - March 22, 2021
 
 - First public release
