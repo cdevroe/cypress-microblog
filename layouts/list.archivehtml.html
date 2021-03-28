@@ -1,3 +1,4 @@
+{{ define "main" }}
 <div class="site-wrapper">
 	{{ partial "sidebar.html" . }}
 	
@@ -17,6 +18,9 @@
                             {{ if .Title }}
                                 <h2><a href="{{ .Permalink }}" class="p-name u-url">{{ .Title }}</a></h2>
                             {{ end }}
+							<div class="e-content">
+								{{ .Summary }}
+							</div>
                         </div>
                     </article>
 				{{ end }}
@@ -39,3 +43,4 @@
 		{{ partial "footer.html" . }}
 	</main>
 </div>
+{{ end }}
