@@ -1,0 +1,41 @@
+<div class="site-wrapper">
+	{{ partial "sidebar.html" . }}
+	
+	<main>
+		{{ partial "blog-header.html" . }}
+		<section class="h-feed">
+			
+				{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+				{{ range $paginator.Pages }}
+                    <article class="h-entry">
+                        <div class="meta">
+                            <h5>
+                                <a href="{{ .Permalink }}" title="{{ .Title }}" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</a>
+                            </h5>
+                        </div>
+                        <div class="content">
+                            {{ if .Title }}
+                                <h2><a href="{{ .Permalink }}" class="p-name u-url">{{ .Title }}</a></h2>
+                            {{ end }}
+                        </div>
+                    </article>
+				{{ end }}
+
+				<div class="pagination">
+					{{ $pag := $.Paginator }}
+					{{ if or $pag.HasPrev $pag.HasNext }}
+						{{ if $pag.HasPrev }}
+							<a href="{{ $pag.Prev.URL }}">&larr; Newer Posts</a>
+						{{ end }}
+						<span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+						{{ if $pag.HasNext }}
+							<a href="{{ $pag.Next.URL }}">Older Posts &rarr;</a>
+						{{ end }}
+					{{ end }}
+				</div>
+
+			
+		</section>
+		{{ partial "footer.html" . }}
+	</main>
+</div>
