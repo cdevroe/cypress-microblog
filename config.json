@@ -1,1 +1,7 @@
-{}
+{
+	"params": {
+		"paginate_home": true,
+		"paginate_categories": true,
+		"paginate_replies": false
+	}
+}
