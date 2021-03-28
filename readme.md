@@ -14,9 +14,10 @@ Cypress for Micro.blog is freely available to members of Micro.blog. Log into yo
 
 ## Version History
 
-2021.1.6 - Unreleased
+2021.1.6 - March 28, 2021
 
 - Added archive page
+- Styling for search results (more coming soon)
 - Updated config to turn on pagination - contributed by [@endonend](https://github.com/endonend)
 
 2021.1.5 - March 25, 2021
