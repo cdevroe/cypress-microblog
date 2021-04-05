@@ -14,6 +14,10 @@ Cypress for Micro.blog is freely available to members of Micro.blog. Log into yo
 
 ## Version History
 
+2021.1.7 - April 5, 2021
+
+- Fix: Sidebar vertically scrolls on small non-mobile devices
+
 2021.1.6 - March 28, 2021
 
 - Added archive page
