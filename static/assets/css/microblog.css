@@ -8,3 +8,5 @@
 #list_results p a {
     text-decoration: underline;
 }
+
+.dark header .main-nav ul li a { color: #fff; }
