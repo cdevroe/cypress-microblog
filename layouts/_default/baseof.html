@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-    <body> <!-- class="dark" for black bg -->
+    {{ if .Site.Params.dark_mode }}
+    <body class="dark">
+    {{ else }}
+    <body>
+    {{ end }}
         {{ block "main" . }}{{ end }}
     </body>
 </html>

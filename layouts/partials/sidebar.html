@@ -14,13 +14,13 @@
             <nav class="main-nav">
                 <ul id="main-navigation">
                     <li class="menu-item"><a href="/">Home</a></li>
-                {{ range .Site.Menus.main }}
-                    {{ if .Page.Params.redirect_url }}
-                        <li class="menu-item"><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
-                    {{ else }}
-                        <li class="menu-item"><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
+                    {{ range .Site.Menus.main }}
+                        {{ if .Page.Params.redirect_url }}
+                            <li class="menu-item"><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
+                        {{ else }}
+                            <li class="menu-item"><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
+                        {{ end }}
                     {{ end }}
-                {{ end }}
                 </ul>
             </nav>
             <div class="social">

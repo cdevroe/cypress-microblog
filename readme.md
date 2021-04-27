@@ -12,7 +12,15 @@ Cypress for Micro.blog is freely available to members of Micro.blog. Log into yo
 
  If you use and like the theme you can [donate to support its development](http://cdevroe.com/donate) if you'd like.
 
+ ## Configuration parameters
+
+ - Dark mode! Set dark_mode to true in config to turn on. Default: false
+
 ## Version History
+
+2021.2.0 - April 27, 2021
+
+- New: Dark mode! Set dark_mode to true in config
 
 2021.1.7 - April 5, 2021
 
