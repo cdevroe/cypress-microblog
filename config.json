@@ -3,6 +3,6 @@
 		"paginate_home": true,
 		"paginate_categories": true,
 		"paginate_replies": false,
-		"dark_mode": true
+		"dark_mode": false
 	}
 }
