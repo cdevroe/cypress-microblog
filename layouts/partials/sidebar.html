@@ -10,7 +10,6 @@
             <div class="subtitle">
                 <p>{{ .Site.Params.description | safeHTML }}</p>
             </div>
-            
             <nav class="main-nav">
                 <ul id="main-navigation">
                     <li class="menu-item"><a href="/">Home</a></li>
@@ -25,8 +24,14 @@
             </nav>
             <div class="social">
                 <p>
-                    {{ with .Site.Params.twitter_username }}
-                        <a href="https://twitter.com/{{ . }}"><i class="fab fa-twitter"></i></a>
+                    {{ with .Site.Params.facebook_username }}
+                        <a href="https://facebook.com/{{ . }}"><i class="fab fa-facebook"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.flickr_username }}
+                        <a href="https://flickr.com/photos/{{ . }}"><i class="fab fa-flickr"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.github_username }}
+                        <a href="https://github.com/{{ . }}"><i class="fab fa-github"></i></a>
                     {{ end }}
                     {{ with .Site.Params.linkedin_username }}
                         <a href="https://linkedin.com/{{ . }}"><i class="fab fa-linkedin"></i></a>
@@ -34,11 +39,20 @@
                     {{ with .Site.Params.instagram_username }}
                         <a href="https://instagram.com/{{ . }}"><i class="fab fa-instagram"></i></a>
                     {{ end }}
-                    {{ with .Site.Params.github_username }}
-                        <a href="https://github.com/{{ . }}"><i class="fab fa-github"></i></a>
+                    {{ with .Site.Params.mastodon_url }}
+                        <a href="{{ . }}"><i class="fab fa-mastodon"></i></a>
                     {{ end }}
-                    {{ with .Site.Author.username }}
+                    {{ with .Site.Author.username }} <!-- Micro.blog is the author's username -->
                         <a href="https://micro.blog/{{ . }}"><i class="fab fa-microblog"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.tiktok_username }}
+                        <a href="https://tiktok.com/@{{ . }}"><i class="fab fa-tiktok"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.twitter_username }}
+                        <a href="https://twitter.com/{{ . }}"><i class="fab fa-twitter"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.youtube_channel }}
+                        <a href="https://youtube.com/channel/{{ . }}"><i class="fab fa-youtube"></i></a>
                     {{ end }}
                 </p>
             </div>

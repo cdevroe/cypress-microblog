@@ -9588,6 +9588,8 @@ $(document).ready(function(){
     });
     $('.blog-controls section a.close-link').on('click', function(e) {
         e.preventDefault();
+		var results_node = document.getElementById("list_results");
+        results_node.innerHTML = "";
         $('.blog-controls').removeClass('active');
         $('.blog-header header nav ul li a').removeClass('active');
         $('.blog-controls section').removeClass('active');
