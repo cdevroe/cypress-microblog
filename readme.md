@@ -1,6 +1,6 @@
 # Cypress for Micro.blog
 
-Written for [Micro.blog](https://micro.blog) by [Colin Devroe](http://cdevroe.com) [@cdevroe](https://micro.blog/cdevroe), design forked from [Cypress for WordPress](http://cdevroe.com/projects/cypress) by Colin Devroe and [Kyle Ruane](http://kyleruane.com/). See [other contributors](https://github.com/cdevroe/cypress-microblog/graphs/contributors)
+Written for [Micro.blog](https://micro.blog) by [Colin Devroe](http://cdevroe.com) [@cdevroe](https://micro.blog/cdevroe).
 
 [View demo site](http://cypress.micro.blog).
 
@@ -10,13 +10,19 @@ Cypress for Micro.blog is freely available to members of Micro.blog. Log into yo
 
 ## Donations
 
- If you use and like the theme you can [donate to support its development](http://cdevroe.com/donate) if you'd like.
+ If you use the theme (and like it) you can [donate to support its development](http://cdevroe.com/donate).
 
  ## Configuration parameters
 
  - Dark mode! Set dark_mode to true in config to turn on. Default: false
+ - Social icons! (see example-config.json)
 
 ## Version History
+
+2021.3.0 - December 10, 2021
+
+- New: Added support for additional social icons Facebook, Flickr, Mastodon, TikTok, YouTube.
+- New: Added an example-config.json file to show how to edit these.
 
 2021.2.0 - April 27, 2021
 
@@ -60,3 +66,6 @@ Cypress for Micro.blog is freely available to members of Micro.blog. Log into yo
 2021.0.8b - March 17, 2021
 
 - First beta release
+
+
+Design forked from [Cypress for WordPress](http://cdevroe.com/projects/cypress) by Colin Devroe and [Kyle Ruane](http://kyleruane.com/). See [other contributors](https://github.com/cdevroe/cypress-microblog/graphs/contributors)
