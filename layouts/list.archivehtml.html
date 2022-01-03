@@ -6,8 +6,8 @@
 		{{ partial "blog-header.html" . }}
 		<section class="h-feed">
 			
-				{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
-				{{ range $paginator.Pages }}
+				{{ $list := (where .Site.Pages "Type" "post") }}
+				{{ range $list }}
                     <article class="h-entry">
                         <div class="meta">
                             <h5>
