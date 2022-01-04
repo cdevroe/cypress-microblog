@@ -1,5 +1,7 @@
 /*  Micro.blog specific styles */
-#list_results { margin-left: 350px; }
+@media all and (min-width:900px) {
+    #list_results { margin-left: 350px; }
+}
 
 #list_results p {
     margin-bottom: 10px;
