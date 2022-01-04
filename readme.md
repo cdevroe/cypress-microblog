@@ -21,6 +21,11 @@ Cypress for Micro.blog is freely available to members of Micro.blog. Log into yo
 
 2021.3.0 - December 10, 2021
 
+- Fix: Archive page fix submitted by Manton PR #13.
+- New: Added files to prepare Cypress to be a Micro.blog plugin submitted by Manton PR #14.
+
+2021.3.0 - December 10, 2021
+
 - New: Added support for additional social icons Facebook, Flickr, Mastodon, TikTok, YouTube.
 - New: Added an example-config.json file to show how to edit these.
 
