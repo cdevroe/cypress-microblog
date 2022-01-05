@@ -1,4 +1,8 @@
 /*  Micro.blog specific styles */
+
+/*
+    Loads search results in a full-width pane on mobile
+*/
 @media all and (min-width:900px) {
     #list_results { margin-left: 350px; }
 }
@@ -12,3 +16,18 @@
 }
 
 .dark header .main-nav ul li a { color: #fff; }
+
+/*
+    Adds some margin to images in blog posts
+*/
+.h-entry .e-content p img {
+    margin-bottom: 0px;
+}
+
+/* 
+    Load profile image at "half size"
+*/
+.logo img {
+    width: 100px;
+    height: 100px;
+}
