@@ -19,7 +19,13 @@ Cypress for Micro.blog is freely available to members of Micro.blog. Log into yo
 
 ## Version History
 
-2021.3.0 - December 10, 2021
+2022.1.1 - January 4, 2022
+
+- Fix: Search results load much better on mobile (still more to do here)
+- Adjustment: Profile photos now load at 50% of their size to make them sharper
+- Fix: Margin added in between images in blog posts
+
+2022.1.0 - January 4, 2022
 
 - Fix: Archive page fix submitted by Manton PR #13.
 - New: Added files to prepare Cypress to be a Micro.blog plugin submitted by Manton PR #14.
